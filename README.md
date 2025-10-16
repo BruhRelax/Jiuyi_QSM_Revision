@@ -9,5 +9,6 @@ Input data (13 cases):
 - Brain mask "brain_mask.nii.gz"
 - Pre-processed Magnitude (cropped Magnitude) "mag_robust.nii.gz"
 - Pre-processed Magntiude (reoriented Magnitude) "mag_std.nii.gz"
+
 Output data (13 cases)
 '/Volumes/henry17/jiuyi_datasets/Jiuyi_revision/output_data'
