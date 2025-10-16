@@ -1,0 +1,17 @@
+# Compiled Object files
+*.o
+
+# Matlab temporary files
+*.m~
+*.cpp~
+*.asv
+
+# MEDI_toolbox specific
+functions/dicom_findActualFilename.m
+functions/dicom_getFileDetails.m
+functions/dicomattrs.m
+functions/versionGen.mat
+functions/dicomparse.me*
+
+#Mac stuff
+.DS_Store
