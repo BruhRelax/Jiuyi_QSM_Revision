@@ -1,0 +1,1 @@
+This folder mainly use to store images such unwrapped phase, tissue phase, invesed tissue phase, and final QSM.

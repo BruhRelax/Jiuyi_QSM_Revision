@@ -1,0 +1,1 @@
+This folder mainly use to store input data Such phase, magnitude, brian mask, and pre-processed phase and magnitude images
