@@ -15,3 +15,8 @@ Input data (13 cases):
 Output data (13 cases):
 
 `/Volumes/henry17/jiuyi_datasets/Jiuyi_revision/output_data`
+- `"unwrap_ROMEO"` folder contains unwrapped phase using ROMEO Algorithm
+- `"unwrap_PRELUDE"` folder contains unwrapped phase using PRELUDE Algorithm
+- Tissue phase `"tissue_phase_{BFR Algorithm}.nii.gz"`
+- Contrust inversed Tissue phase `"tissue_phase_inv.nii.gz"`
+- QSM `"QSM_{Dipole Inversion Algorithm}_{BFR Algorithm}.nii.gz"`
