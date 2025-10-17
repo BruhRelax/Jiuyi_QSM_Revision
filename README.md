@@ -1,5 +1,9 @@
 # Jiuyi_QSM_Revision
-Revised version of PRL image processing pipeline
+- [Data locations](##data-locations)
+- [Image Pre-processing](##image-pre-processing)
+- [QSM Processing](##qsm-processing)
+- [ROMEO setup](##romeo-setup)
+- [References](##references)
 ## Data locations
 Input data (13 cases):
 
@@ -68,9 +72,9 @@ prelude -a mag_robust.nii.gz -p phase_rad.nii.gz -u output_data/mse{case ID}/unw
 ```bash
 romeo -p phase_rad.nii.gz -m mag_robust.nii.gz -k brain_mask.nii.gz -u -o output_data/mse{case ID}/unwrap_ROMEO
 ```
-ROMEO requires additional setup before operation. [Learn more about the instructions](##romeo-set-up)
+ROMEO requires additional setup before operation. [Learn more about the instructions](##romeo-setup)
 
-## ROMEO set up
+## ROMEO setup
 
 
 ## References:
