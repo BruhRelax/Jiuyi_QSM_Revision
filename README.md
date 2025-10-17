@@ -77,12 +77,17 @@ Multi Echo:
 ```bash
 romeo -p phase_rad.nii.gz -m mag_robust.nii.gz -k brain_mask.nii.gz -t [TE1, TE2, TE3, … ] -u -o output_data/mse{case ID}/unwrap_ROMEO
 ```
-ROMEO requires additional setup before operation. [Learn more about the instructions](#romeo-setup)
+ROMEO requires additional setup before operation. [Learn more](#romeo-setup)
 
 ## Background Field Removal and Dipole inversion
-Run Matlab script [run_singleEcho.m](https://github.com/BruhRelax/Jiuyi_QSM_Revision/blob/main/run_singleEcho.m)
+Run MATLAB script [run_singleEcho.m](https://github.com/BruhRelax/Jiuyi_QSM_Revision/blob/main/run_singleEcho.m)
 - Make sure change to correct path before operating.
 - [run_singleEcho.m](https://github.com/BruhRelax/Jiuyi_QSM_Revision/blob/main/run_singleEcho.m) is the main operating file. If any core functions require adjustment, all modifications can be made in [singleEcho.m](https://github.com/BruhRelax/Jiuyi_QSM_Revision/blob/main/functions/singleEcho.m).
+
+The MATLAB script saves the following files to disk inside the `output_data/mse{caseID}/`folder:
+- `tissue_phase_{BFR Algorithm}.nii.gz` The tissue phase map saved as a NIfTI file (e.g., tissue_phase_RESHARP.nii.gz).
+- `QSM_{Dipole Inversion Algorithm}_{BFR Algorithm}.nii.gz` The final QSM map saved as a NIfTI file (e.g., QSM_MEDI_RESHARP.nii.gz).
+- `RDF.mat` An intermediate MATLAB data file containing parameters needed for the MEDI toolbox.
 
 ## ROMEO setup
 1. Ensure [Julia](https://julialang.org/) installed on laptop (For Macbook)
