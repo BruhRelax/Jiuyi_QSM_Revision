@@ -9,7 +9,7 @@ Input data (13 cases):
 - Brain mask `"brain_mask.nii.gz"`
 - Pre-processed Magnitude (cropped Magnitude) `"mag_robust.nii.gz"`
 - Pre-processed Magntiude (reoriented Magnitude) `"mag_std.nii.gz"`
-- registed phase `"phase_registered_rigid.nii.gz"`
+- registered phase `"phase_registered_rigid.nii.gz"`
 - unit converted phase `"phase_rad.nii.gz"`
 
 Output data (13 cases):
@@ -22,7 +22,7 @@ Output data (13 cases):
 - QSM `"QSM_{Dipole Inversion Algorithm}_{BFR Algorithm}.nii.gz"`
 
 ## Image Pre-processing
-For Magnitude Images:
+For Magnitude Image:
 1. `mag_std.nii.gz` Reorient Magnitude image to FSL’s standard orientation convention  
 ```bash
 "fslreorient2std input_mag.nii.gz mag_std.nii.gz"
@@ -35,7 +35,8 @@ For Magnitude Images:
 ```bash
 "bet mag_robust.nii.gz brain.nii.gz -f {fractional intensity threshold value} -m"
 ```
-5. `phase_registered_rigid.nii.gz`&`flair_registered_rigid.nii.gz` register phase/FLAIR image to pre-processed Magnitude image  
+For Phase and FLAIR images:
+1. `phase_registered_rigid.nii.gz`&`flair_registered_rigid.nii.gz` register phase/FLAIR image to pre-processed Magnitude image  
 ```bash
 python reg_GUI.py
 ```
@@ -45,6 +46,9 @@ Within that folder, it will produce one or two files named `moving_1_registered_
 
 If the configuration indicates that `moving_1` or `moving_2` is already aligned, the corresponding output file may not be generated.
 After processing, manuelly rename the registered images according to their corresponding image types based on what you used as `moving_1` and `moving_2`.
+
+## QSM Processing
+
 
 
 
