@@ -7,7 +7,7 @@
 ## Data locations
 Input data (13 cases):
 
-`/Working/henry17/jiuyi_datasets/Jiuyi_revision/input_data`
+`/Volumes/henry17/jiuyi_datasets/Jiuyi_revision/input_data`
 - Original phase image `"mag_ph.nii.gz"`
 - Original phase image `"mag.nii.gz"`
 - Brain mask `"brain_mask.nii.gz"`
