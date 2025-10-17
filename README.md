@@ -80,7 +80,9 @@ romeo -p phase_rad.nii.gz -m mag_robust.nii.gz -k brain_mask.nii.gz -t [TE1, TE2
 ROMEO requires additional setup before operation. [Learn more about the instructions](#romeo-setup)
 
 For Background Field Removal and Dipole inversion:
-Run [Matlab script]()
+Run Matlab script [run_singleEcho.m](https://github.com/BruhRelax/Jiuyi_QSM_Revision/blob/main/run_singleEcho.m)
+- Make sure change to correct path before operating.
+- [run_singleEcho.m](https://github.com/BruhRelax/Jiuyi_QSM_Revision/blob/main/run_singleEcho.m) is the main operating file. If any core functions require adjustment, all modifications can be made in [singleEcho.m](https://github.com/BruhRelax/Jiuyi_QSM_Revision/blob/main/functions/singleEcho.m).
 
 ## ROMEO setup
 1. Ensure [Julia](https://julialang.org/) installed on laptop (For Macbook)
