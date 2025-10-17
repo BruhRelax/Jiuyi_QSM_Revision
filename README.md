@@ -1,9 +1,9 @@
 # Jiuyi_QSM_Revision
-- [Data locations](##data-locations)
-- [Image Pre-processing](##image-pre-processing)
-- [QSM Processing](##qsm-processing)
-- [ROMEO setup](##romeo-setup)
-- [References](##references)
+- [Data locations](#data-locations)
+- [Image Pre-processing](#image-pre-processing)
+- [QSM Processing](#qsm-processing)
+- [ROMEO setup](#romeo-setup)
+- [References](#references)
 ## Data locations
 Input data (13 cases):
 
