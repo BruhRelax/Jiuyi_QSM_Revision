@@ -72,9 +72,20 @@ prelude -a mag_robust.nii.gz -p phase_rad.nii.gz -u output_data/mse{case ID}/unw
 ```bash
 romeo -p phase_rad.nii.gz -m mag_robust.nii.gz -k brain_mask.nii.gz -u -o output_data/mse{case ID}/unwrap_ROMEO
 ```
-ROMEO requires additional setup before operation. [Learn more about the instructions](##romeo-setup)
+ROMEO requires additional setup before operation. [Learn more about the instructions](#romeo-setup)
 
 ## ROMEO setup
+1. Ensure [Julia](https://julialang.org/) installed on laptop (For Macbook)
+2. Clone the ROMEO.jl github repository:
+```bash
+git clone https://github.com/korbinian90/ROMEO.jl.git
+```
+4. Then move the file “romeo.jl” to a convenient path. If operate romeo.jl in the original folder, it will cause an error due to naming conflicts.
+5. Create a convenient alias. Create an alias so that we can call romeo directly from any directory. This way we can run the command by simply typing “romeo”
+```bash
+alias romeo=”julia /path/to/file/romeo.jl”
+```
+5. Run ROMEO phase unwrapping
 
 
 ## References:
