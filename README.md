@@ -48,7 +48,16 @@ If the configuration indicates that `moving_1` or `moving_2` is already aligned,
 After processing, manuelly rename the registered images according to their corresponding image types based on what you used as `moving_1` and `moving_2`.
 
 ## QSM Processing
-
+For Phase Unwrapping:
+- PRELUDE (time consuming, but accurate in most of the cases):
+```bash
+prelude -a mag_robust.nii.gz -p phase_rad.nii.gz -u otuput_data/mse{case ID}/unwrap_PRELUDE/prelude.nii.gz -m brain_mask.nii.gz
+```
+- ROMEO (Fast and capable of producing an unwrapped phase image similar to the PRELUDE algorithm.)
+```bash
+romeo -p phase_rad.nii.gz -m mag_robust.nii.gz -k brain_mask.nii.gz -u -o otuput_data/mse{case ID}/unwrap_ROMEO
+```
+ROMEO requires additional setup before operation.
 
 
 
