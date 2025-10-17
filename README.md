@@ -45,17 +45,28 @@ The GUI will process the two moving images and store the registered results in a
 Within that folder, it will produce one or two files named `moving_1_registered_rigid` and `moving_2_registered_rigid`.
 
 If the configuration indicates that `moving_1` or `moving_2` is already aligned, the corresponding output file may not be generated.
-After processing, manuelly rename the registered images according to their corresponding image types based on what you used as `moving_1` and `moving_2`.
-
+After processing, manuelly rename the registered images according to their corresponding image types based on what you used as `moving_1` and `moving_2`.  
+2. `phase_rad.nii.gz` Convert unit of phase image to rad.  
+check unit of the phase image:
+```bash
+fslstats mag_ph.nii.gz -R.
+```
+- if it returns “-3.14 3.14”, that means the phase is already in radius.
+- If it returns “-4096 4096”, that means the phase is still in integer value.  
+Convert unit from integer to rad:
+```bash
+fslmaths mag_ph.nii.gz -mul 3.14159 -div {divsor} phase_rad.nii.gz -odt float
+```
+- `divsor` is depend on what fslstats returns.  
 ## QSM Processing
 For Phase Unwrapping:
 - PRELUDE (time consuming, but accurate in most of the cases):
 ```bash
-prelude -a mag_robust.nii.gz -p phase_rad.nii.gz -u otuput_data/mse{case ID}/unwrap_PRELUDE/prelude.nii.gz -m brain_mask.nii.gz
+prelude -a mag_robust.nii.gz -p phase_rad.nii.gz -u output_data/mse{case ID}/unwrap_PRELUDE/prelude.nii.gz -m brain_mask.nii.gz
 ```
 - ROMEO (Fast and capable of producing an unwrapped phase image similar to the PRELUDE algorithm.)
 ```bash
-romeo -p phase_rad.nii.gz -m mag_robust.nii.gz -k brain_mask.nii.gz -u -o otuput_data/mse{case ID}/unwrap_ROMEO
+romeo -p phase_rad.nii.gz -m mag_robust.nii.gz -k brain_mask.nii.gz -u -o output_data/mse{case ID}/unwrap_ROMEO
 ```
 ROMEO requires additional setup before operation.
 
