@@ -69,10 +69,18 @@ For Phase Unwrapping:
 prelude -a mag_robust.nii.gz -p phase_rad.nii.gz -u output_data/mse{case ID}/unwrap_PRELUDE/prelude.nii.gz -m brain_mask.nii.gz
 ```
 - ROMEO (Fast and capable of producing an unwrapped phase image similar to the PRELUDE algorithm.)
+Single Echo:
 ```bash
 romeo -p phase_rad.nii.gz -m mag_robust.nii.gz -k brain_mask.nii.gz -u -o output_data/mse{case ID}/unwrap_ROMEO
 ```
+Multi Echo:
+```bash
+romeo -p phase_rad.nii.gz -m mag_robust.nii.gz -k brain_mask.nii.gz -t [TE1, TE2, TE3, … ] -u -o output_data/mse{case ID}/unwrap_ROMEO
+```
 ROMEO requires additional setup before operation. [Learn more about the instructions](#romeo-setup)
+
+For Background Field Removal and Dipole inversion:
+Run [Matlab script]()
 
 ## ROMEO setup
 1. Ensure [Julia](https://julialang.org/) installed on laptop (For Macbook)
