@@ -62,8 +62,8 @@ Convert unit from integer to rad:
 fslmaths mag_ph.nii.gz -mul 3.14159 -div {divsor} phase_rad.nii.gz -odt float
 ```
 - `{divsor}` is depend on what fslstats returns.  
-## QSM Processing
-For Phase Unwrapping:
+
+## Phase Unwrapping
 - PRELUDE (time consuming, but accurate in most of the cases):
 ```bash
 prelude -a mag_robust.nii.gz -p phase_rad.nii.gz -u output_data/mse{case ID}/unwrap_PRELUDE/prelude.nii.gz -m brain_mask.nii.gz
@@ -79,7 +79,7 @@ romeo -p phase_rad.nii.gz -m mag_robust.nii.gz -k brain_mask.nii.gz -t [TE1, TE2
 ```
 ROMEO requires additional setup before operation. [Learn more about the instructions](#romeo-setup)
 
-For Background Field Removal and Dipole inversion:
+## Background Field Removal and Dipole inversion
 Run Matlab script [run_singleEcho.m](https://github.com/BruhRelax/Jiuyi_QSM_Revision/blob/main/run_singleEcho.m)
 - Make sure change to correct path before operating.
 - [run_singleEcho.m](https://github.com/BruhRelax/Jiuyi_QSM_Revision/blob/main/run_singleEcho.m) is the main operating file. If any core functions require adjustment, all modifications can be made in [singleEcho.m](https://github.com/BruhRelax/Jiuyi_QSM_Revision/blob/main/functions/singleEcho.m).
