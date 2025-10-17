@@ -28,11 +28,17 @@ For Magnitude Images:
 "fslreorient2std input_mag.nii.gz mag_std.nii.gz"
 ```
 2. `mag_robust.nii.gz` Crop the reoriented Magnitude image to include only the field of view around the brain and remove empty background or neck regions.  
-`"robustfov -i mag_std.nii.gz -r mag_robust.nii.gz"`  
-3. `brain_mask.nii.gz` Create Brain mask from pre-processed Magnitude image (Single Echo)  
-`"bet mag_robust.nii.gz brain.nii.gz -f {fractional intensity threshold value} -m"`  
-4. `phase_registered_rigid.nii.gz`&`flair_registered_rigid.nii.gz` register phase/FLAIR image to pre-processed Magnitude image  
-`python reg_GUI.py`  
+```bash
+"robustfov -i mag_std.nii.gz -r mag_robust.nii.gz"
+```
+4. `brain_mask.nii.gz` Create Brain mask from pre-processed Magnitude image (Single Echo)  
+```bash
+"bet mag_robust.nii.gz brain.nii.gz -f {fractional intensity threshold value} -m"
+```
+5. `phase_registered_rigid.nii.gz`&`flair_registered_rigid.nii.gz` register phase/FLAIR image to pre-processed Magnitude image  
+```bash
+python reg_GUI.py
+```
 Use the pre-processed magnitude image `mag_robust.nii.gz` as the reference image, and `mag_ph.nii.gz` and `original_FLAIR.nii.gz` as the moving images.
 The GUI will process the two moving images and store the registered results in a self-generated folder called `registered_output`.
 Within that folder, it will produce one or two files named `moving_1_registered_rigid` and `moving_2_registered_rigid`.
