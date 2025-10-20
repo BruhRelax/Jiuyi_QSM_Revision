@@ -89,9 +89,14 @@ The MATLAB script saves the following files to disk inside the `output_data/mse{
 - `QSM_{Dipole Inversion Algorithm}_{BFR Algorithm}.nii.gz` The final QSM map saved as a NIfTI file (e.g., QSM_MEDI_RESHARP.nii.gz).
 - `RDF.mat` An intermediate MATLAB data file containing parameters needed for the MEDI toolbox.
 
-## Realignment and registration
-Operation script [reg_GUI.py](reg_GUI.py)
-Detailed function script
+## Realignment and Registration
+This section mainly focuses on cases where the spatial information of the resulted images after QSM processing and the magnitude images are not properly aligned, or when they cannot be aligned with the FLAIR images.  
+Execution script: [reg_GUI.py](reg_GUI.py)  
+- calls specific functions from other scripts and sets up the GUI.  
+Registration utility script: [regis_utils.py](functions/regis_utils.py)  
+- Performing image registration using the SimpleITK library.
+- Check whether the images are aligned by comparing their basic metadata, including image size, origin, spacing, and orientation.
+- Optimize the alignment by maximizing the Mattes mutual information between the two images.  
 
 ## ROMEO setup
 1. Ensure [Julia](https://julialang.org/) installed on laptop (For Macbook)
@@ -105,14 +110,3 @@ git clone https://github.com/korbinian90/ROMEO.jl.git
 alias romeo=”julia /path/to/file/romeo.jl”
 ```
 5. Run ROMEO phase unwrapping
-
-
-## References:
-
-
-
-
-
-
-
-
