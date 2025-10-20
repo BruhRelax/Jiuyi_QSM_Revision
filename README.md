@@ -92,7 +92,7 @@ The MATLAB script saves the following files to disk inside the `output_data/mse{
 ## Realignment and Registration
 This section mainly focuses on cases where the spatial information of the resulted images after QSM processing and the magnitude images are not properly aligned, or when they cannot be aligned with the FLAIR images.  
 Execution script: [reg_GUI.py](reg_GUI.py)  
-- calls specific functions from other scripts and sets up the GUI.
+- calls specific functions from utility scripts and sets up the GUI.
 
 Registration utility script: [regis_utils.py](functions/regis_utils.py)  
 - Performing image registration using the SimpleITK library.
