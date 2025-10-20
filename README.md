@@ -89,6 +89,10 @@ The MATLAB script saves the following files to disk inside the `output_data/mse{
 - `QSM_{Dipole Inversion Algorithm}_{BFR Algorithm}.nii.gz` The final QSM map saved as a NIfTI file (e.g., QSM_MEDI_RESHARP.nii.gz).
 - `RDF.mat` An intermediate MATLAB data file containing parameters needed for the MEDI toolbox.
 
+## Realignment and registration
+Operation script [reg_GUI.py](reg_GUI.py)
+Detailed function script
+
 ## ROMEO setup
 1. Ensure [Julia](https://julialang.org/) installed on laptop (For Macbook)
 2. Clone the ROMEO.jl github repository:
