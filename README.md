@@ -25,6 +25,14 @@ Output data (13 cases):
 - Contrust inversed Tissue phase `"tissue_phase_inv.nii.gz"`
 - QSM `"QSM_{Dipole Inversion Algorithm}_{BFR Algorithm}.nii.gz"`
 
+## Setup
+Clone Resposity:
+Open terminal or Vscode, "cd" to where want to store the porject, and clone the repo from Github
+```bash
+"https://github.com/RolandHenryLaboratory/Jiuyi_QSM_Revision.git"
+```
+
+
 ## Image Pre-processing
 For Magnitude Image:
 1. `mag_std.nii.gz` Reorient Magnitude image to FSL’s standard orientation convention  
