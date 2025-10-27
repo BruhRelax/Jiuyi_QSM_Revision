@@ -1,6 +1,6 @@
 # Jiuyi_QSM_Revision
 - [Data locations](#data-locations)
-- [Setup](#project-and-environment-setup)
+- [Project and Environment Setup](#project-and-environment-setup)
 - [Image Pre-processing](#image-pre-processing)
 - [QSM Processing](#qsm-processing)
 - [ROMEO setup](#romeo-setup)
