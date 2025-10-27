@@ -1,6 +1,6 @@
 # Jiuyi_QSM_Revision
 - [Data locations](#data-locations)
-- [Setup](#setup)
+- [Setup](#project-and-environment-setup)
 - [Image Pre-processing](#image-pre-processing)
 - [QSM Processing](#qsm-processing)
 - [ROMEO setup](#romeo-setup)
@@ -26,7 +26,7 @@ Output data (13 cases):
 - Contrust inversed Tissue phase `"tissue_phase_inv.nii.gz"`
 - QSM `"QSM_{Dipole Inversion Algorithm}_{BFR Algorithm}.nii.gz"`
 
-## Setup
+## Project and Environment Setup
 1) Clone Resposity:
 Open terminal or Vscode, `cd` to where want to store the porject, and clone the repo from Github
 ```bash
