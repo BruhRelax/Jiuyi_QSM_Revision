@@ -26,12 +26,20 @@ Output data (13 cases):
 - QSM `"QSM_{Dipole Inversion Algorithm}_{BFR Algorithm}.nii.gz"`
 
 ## Setup
-Clone Resposity:
-Open terminal or Vscode, "cd" to where want to store the porject, and clone the repo from Github
+1) Clone Resposity:
+Open terminal or Vscode, `cd` to where want to store the porject, and clone the repo from Github
 ```bash
-"https://github.com/RolandHenryLaboratory/Jiuyi_QSM_Revision.git"
+"git clone https://github.com/RolandHenryLaboratory/Jiuyi_QSM_Revision.git"
 ```
-
+2) Move into the Project Folder
+```bash
+"cd path/to/Jiuyi_QSM_Revision"
+```
+3) Environment Set Up:
+Create the Environment from `.yml` File. Conda will read `PRLproject_env.yml` file, create a new environment with the exact same name and packages.
+```bash
+"conda env create -f PRLproject_env.yml"
+```
 
 ## Image Pre-processing
 For Magnitude Image:
