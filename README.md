@@ -1,5 +1,6 @@
 # Jiuyi_QSM_Revision
 - [Data locations](#data-locations)
+- [Project and Environment Setup](#project-and-environment-setup)
 - [Image Pre-processing](#image-pre-processing)
 - [QSM Processing](#qsm-processing)
 - [ROMEO setup](#romeo-setup)
@@ -25,19 +26,35 @@ Output data (13 cases):
 - Contrust inversed Tissue phase `"tissue_phase_inv.nii.gz"`
 - QSM `"QSM_{Dipole Inversion Algorithm}_{BFR Algorithm}.nii.gz"`
 
+## Project and Environment Setup
+1) Clone Resposity:
+Open terminal or Vscode, `cd` to where want to store the porject, and clone the repo from Github
+```bash
+git clone https://github.com/RolandHenryLaboratory/Jiuyi_QSM_Revision.git
+```
+2) Move into the Project Folder
+```bash
+cd path/to/Jiuyi_QSM_Revision
+```
+3) Environment Set Up:
+Create the Environment from `.yml` File. Conda will read `PRLproject.yml` file, create a new environment with the exact same name and packages.
+```bash
+conda env create -f PRLproject.yml
+```
+
 ## Image Pre-processing
 For Magnitude Image:
 1. `mag_std.nii.gz` Reorient Magnitude image to FSL’s standard orientation convention  
 ```bash
-"fslreorient2std input_mag.nii.gz mag_std.nii.gz"
+fslreorient2std input_mag.nii.gz mag_std.nii.gz
 ```
 2. `mag_robust.nii.gz` Crop the reoriented Magnitude image to include only the field of view around the brain and remove empty background or neck regions.  
 ```bash
-"robustfov -i mag_std.nii.gz -r mag_robust.nii.gz"
+robustfov -i mag_std.nii.gz -r mag_robust.nii.gz
 ```
 4. `brain_mask.nii.gz` Create Brain mask from pre-processed Magnitude image (Single Echo)  
 ```bash
-"bet mag_robust.nii.gz brain.nii.gz -f {fractional intensity threshold value} -m"
+bet mag_robust.nii.gz brain.nii.gz -f {fractional intensity threshold value} -m
 ```
 For Phase and FLAIR images:
 1. `phase_registered_rigid.nii.gz`&`flair_registered_rigid.nii.gz` register phase/FLAIR image to pre-processed Magnitude image  
