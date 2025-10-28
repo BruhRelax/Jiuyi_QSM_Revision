@@ -44,7 +44,7 @@ conda env create -f PRLproject.yml
 
 ## Image Pre-processing
 For Magnitude Image:
-1. `mag_std.nii.gz` Reorient Magnitude image to FSL’s standard orientation convention  
+1. `mag_std.nii.gz` Reorient Magnitude image to FSL’s standard orientation  
 ```bash
 fslreorient2std input_mag.nii.gz mag_std.nii.gz
 ```
