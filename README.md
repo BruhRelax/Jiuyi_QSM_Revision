@@ -37,9 +37,9 @@ git clone https://github.com/RolandHenryLaboratory/Jiuyi_QSM_Revision.git
 cd path/to/Jiuyi_QSM_Revision
 ```
 3) Environment Set Up:
-Create the Environment from `.yml` File. Conda will read `PRLproject_env.yml` file, create a new environment with the exact same name and packages.
+Create the Environment from `.yml` File. Conda will read `PRLproject.yml` file, create a new environment with the exact same name and packages.
 ```bash
-conda env create -f PRLproject_env.yml
+conda env create -f PRLproject.yml
 ```
 
 ## Image Pre-processing
